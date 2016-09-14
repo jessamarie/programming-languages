@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Programming Assignment #1</title>
+</head><body>
+
+<center>
+<h4>
+CSCI.4430/6430 Programming Languages Fall 2016<br>
+Programming Assignment #1</h4></center>
+
+<p><i>This assignment is to be done either <b>individually</b> or <b>in pairs</b>. <b>Do not
+show your code to any other group</b> and <b>do not look at any other group's
+code</b>. Do not put your code in a public directory or otherwise make it public.
+However, you may get help from the TAs or the instructor.
+You are encouraged to use the LMS Discussions page to post problems so
+that other students can also answer/see the answers.</i></p>
+
+
+<h3>
+<b>Lambda Calculus Interpreter</b></h3>
+
+<p> The goal of this assignment is to write a lambda calculus
+interpreter in a functional programming language to reduce lambda
+calculus expressions in a call-by-value (applicative order) manner.
+</p>
+
+<p>
+You are to use the following grammar for the lambda calculus:
+</p>
+
+<p>
+<code>
+<table border="0">
+	<tbody><tr><td width="100px"></td><td>&lt;expression&gt;</td><td>::=</td><td>&lt;atom&gt;</td></tr>
+	<tr><td width="100px"></td><td></td><td>|</td><td>"\" &lt;atom&gt; "." &lt;expression&gt;</td></tr>
+	<tr><td width="100px"></td><td></td><td>|</td><td>"(" &lt;expression&gt;  " "  &lt;expression&gt; ")" </td></tr>
+</tbody></table>
+</code>
+</p>
+
+<p>
+Your interpreter is expected to take each lambda calculus expression and
+ repeatedly perform beta reduction until no longer possible (a value 
+expression that can no longer be beta-reduced) and then eta reduction 
+until no longer possible.
+</p>
+
+<p>
+In the above grammar, <code>&lt;atom&gt;</code> is defined as a lower
+case letter followed by a sequence of zero or more alphanumeric
+characters, excluding Oz language keywords. A full listing of Oz
+language keywords can be found on P. 839 Table C.8 of "Concepts,
+Techniques, and Models of Computer Programming".
+Your interpreter is to take lambda calculus expressions from a text
+file (one expression per line) and reduce them sequentially.
+To enable you to focus on the lambda calculus semantics, a parser is
+provided in Oz and in Haskell.
+</p>
+
+<p>
+<b>Hints</b>: You may define auxiliary procedures for alpha-renaming, 
+beta-reduction, and eta-conversion. For beta reduction, you may want to 
+write an auxiliary procedure that substitutes all occurrences of a 
+variable in an expression for another expression. Be sure that the 
+replacing expression does not include free variables that would become 
+captured in the substitution. Remember that in call-by-value, the 
+argument to a function is evaluated before the function is called.
+</p>
+
+<h3> Sample Interpretations</h3>
+
+<p>
+Below are some lambda calculus interpretation test cases:
+<table border="1" cellpadding="5px">
+	<tbody><tr><th>Expression</th><th>Result</th><th>Comment</th></tr>
+	<tr><td><code>(\x.\y.(y x) (y w))</code></td><td><code>\z.(z (y w))</code></td><td>Avoid capturing the free variable <code>y</code> in <code>(y w)</code></td></tr>
+	<tr><td><code>(\x.\y.(x y) (y w))</code></td><td><code>(y w)</code></td><td>Avoid capturing the free variable <code>y</code> in <code>(y w)</code>, and perform eta reduction</td></tr>
+	<tr><td><code>(\x.x y)</code></td><td><code>y</code></td><td>Identity combinator</td></tr>
+	<tr><td><code>\x.(y x)</code></td><td><code>y</code></td><td>Eta reduction</td></tr>
+	<tr><td><code>((\y.\x.(y x) \x.(x x)) y)</code></td><td><code>(y y)</code></td><td>Application combinator</td></tr>
+	<tr><td><code>(((\b.\t.\e.((b t) e) \x.\y.x) x) y)</code></td><td><code>x</code></td><td>If-then-else combinator</td></tr>
+	<tr><td><code>\x.((\x.(y x) \x.(z x)) x)</code></td><td><code>(y z)</code></td><td>Eta reductions</td></tr>
+	<tr><td><code>(\y.(\x.\y.(x y) y) (y w))</code></td><td><code>(y w)</code></td><td>Alpha renaming, beta reduction and eta reduction all involved</td></tr>
+</tbody></table>
+</p>
+
+<p>
+For your convenience, these have been given in a <a href="http://www.cs.rpi.edu/academics/courses/fall16/proglang/pa1/input.lambda">sample input file</a>,
+ where each line contains one lambda expression. Lines are separated 
+with exactly one '\n' character, and there should be no '\n' following 
+the last line for the parser to work properly.
+</p>
+
+<h3><hr width="100%">Notes for Oz Programmers</h3>
+<p>
+Use <a href="http://www.cs.rpi.edu/academics/courses/fall16/proglang/pa1/parser.ozf">this parser</a> to get a list of lambda calculus
+expressions from an input file. See also the <a href="http://www.cs.rpi.edu/academics/courses/fall16/proglang/pa1/test.oz">sample usage of the parser</a>. The answers should be
+printed in the Browser window with the <code>Browse</code> function,
+one line per expression.  Lambda calculus expressions are parsed as
+atoms for variables, as two-element <code>lambda</code> tuples for
+functional abstractions, and as two-element lists for function
+applications.
+Your goal is to create a <code>Run</code> function to interpret lambda
+calculus expressions. </p>
+
+<p>
+<b>Further Oz Hints</b>: Make sure oz is started in the folder
+containing parser.ozf and input.lambda (in Windows, the easiest way is
+by putting the parser, input and test files in one folder and double
+clicking test.oz), or changing the absolute paths or relative paths of
+<code>'parser.ozf'</code> and <code>'input.lambda'</code> in
+<code>test.oz</code>.
+<br>
+<br>See the <a href="http://www.cs.rpi.edu/academics/courses/fall16/proglang/pa1/parser.oz">source code for the parser</a> if you are interested, and feel free to report problems and provide comments.<br>
+</p>
+
+<h3><hr width="100%">Notes for Haskell Programmers</h3>
+
+<p> Use <a href="http://www.cs.rpi.edu/academics/courses/fall16/proglang/pa1/PA1Helper.hs">this parser</a> to get a list of lambda
+calculus expressions from an input file. See also the <a href="http://www.cs.rpi.edu/academics/courses/fall16/proglang/pa1/main.hs">sample usage of the parser</a> (in
+particular, see the <code>runProgram</code> function.) Specifically, type
+constructors for the <code>Lexp</code> datatype have been exported
+from the module. This datatype is used to represent lambda calculus expressions
+in Haskell, and the type constructors should be used to pattern match
+a lambda expression.  Your goal is to create a <code>reducer</code>
+function that takes an <code>Lexp</code> value as input and returns a
+<code>Lexp</code> value as output.
+<br><b>Note</b>: Please name your main file 'main.hs'. It should take as
+ input a file name; the file itself will consist of multiple lines, as 
+described earlier, each with a single lambda expression on it. The 
+provided code will parse this file. You should output the simplified 
+lambda expression, as described in the sample interaction below.
+</p>
+
+<p>You can also retrieve the starting code from <a href="https://github.com/chuck211991/Fall16_PA1_Haskell">https://github.com/chuck211991/Fall16_PA1_Haskell</a></p>
+
+<h4>Sample Interaction</h4>
+<pre>$ echo "sample.lambda" | runghc main.hs
+Please enter a filename containing lambda expressions:
+Input 1: (\x.x y)
+Result 1: y
+Input 2: (\x.\y.(x y) (y w))
+Result 2: (y w)
+</pre>
+
+<p>If you get an error about Text.Parsec being undefined, run <code>stack cabal install parsec</code> (or <code>cabal install parsec</code>)</p>
+
+<p>
+<b>Further Haskell Hints</b>: It may be useful to consider Map and Set,
+which can be found in the Data.Map and Data.Set modules, respectively. It is also
+recommended to use <a href="https://www.haskell.org/hoogle/">Hoogle</a>, a search
+engine for looking up Haskell documentation.
+</p>
+
+<h3><b><hr width="100%">Due Date: Thursday, 09/22, 7:00PM</b></h3>
+
+<p></p><p><b>Grading: </b>The assignment will be graded mostly on correctness,
+but code clarity / readability will also be a factor (comment, comment,
+comment!).
+
+</p><p><b>Submission Requirements: </b>Please submit a ZIP file with your code,
+including a README file.
+Your ZIP file should be named with your LMS user name(s) as the filename underscore the language you chose.
+<br>Examples: userid1_oz.zip, userid1_userid2_hs.zip, userid1_lisp.zip.<br>
+Only submit one assignment per pair via LMS.
+In the README file, place the names of each group member (up to two).
+Your README file should also have a list of specific features/bugs in your solution.
+</p>
+
+</body></html>
