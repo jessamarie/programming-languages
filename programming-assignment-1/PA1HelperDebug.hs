@@ -1,4 +1,4 @@
-module PA1Helper(runProgram,Lexp(..)) where
+module PA1HelperDebug(runProgram,Lexp(..)) where
 
 import Text.Parsec
 import Text.Parsec.String
@@ -22,7 +22,7 @@ instance Eq Lexp  where
 instance Show Lexp  where 
     show (Atom v) = "(Atom " ++ v ++ ")"
     show (Lambda exp1 exp2) = "(Lambda " ++ (show exp1) ++ " " ++ (show exp2) ++ ")"
-    show (Apply exp1 exp2) = "(" ++ (show exp1) ++ " " ++ (show exp2) ++ ")" 
+    show (Apply exp1 exp2) = "(Apply " ++ (show exp1) ++ " " ++ (show exp2) ++ ")" 
 
 
 -- Reserved keywords in Oz
