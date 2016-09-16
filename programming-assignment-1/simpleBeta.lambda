@@ -1,4 +1,11 @@
-(\x.x y)
+\x.x
+\x.\y.x
+\x.\y.(x y)
+\x.(x z)
 (\x.z y)
+(\x.x y)
 (\x.z \y.w)
 (\x.x \y.w)
+(\x.\z.(z x) (y w))
+(\y.y (w z))
+

@@ -30,46 +30,69 @@ id' lexp@(Apply _ _) = lexp
 
 alphaRename :: Lexp -> Lexp
 alphaRename v@(Atom atom) = v
-alphaRename lexp@(Apply (Lambda (Atom x) (Atom y)) (Atom z)) 
-	| x == y && x == z = (Apply (Lambda a a) (Atom z)) 
-	| x == z = (Apply (Lambda a (Atom y)) (Atom z)) 
-	| otherwise = lexp
-	where a = getAtom lexp
---  alphaRename lexp@(Lambda (Atom x) exp) = lexp 
---alphaRename lexp@(Lambda (Atom x) exp) = lexp = let exp' = rename lexp show lexp 
--- NEEDS WORK: How to actually rename the variable?
+alphaRename (Lambda (Atom a) exp) = let exp' = alphaRename(exp)
+                                    in (Lambda(Atom a) exp')
+alphaRename lexp@(Apply exp1 exp2) = let exp1' = alphaRename(exp1) 
+                                         exp2' = alphaRename(exp2) 
+                                     in (Apply exp1' exp2') 
 
 atoms = [Atom "a", Atom "c", Atom "d", Atom "f", Atom "g", Atom "h"]
-getAtom:: Lexp -> Lexp
-getAtom lexp = (Atom "j")
+getNewAtom:: Lexp -> Lexp
+getNewAtom v@(Atom _) = v
+getNewAtom lexp@(Lambda(Atom x) (Atom y))
+         | x == y = (Lambda(Atom "l") (Atom "l"))
+         | otherwise = (Lambda(Atom "l") (Atom y))
 
-
--- TODO: Beta-reduction in Applicative Order --
--- HANDLE :: (Atom x), (Lambda (Atom x) expression)
---           (Apply exp_x exp_y), (Lambda (atom x) var)
- 
+-- Beta-reduction in Applicative Order --
+-- This function simplifies the expression
 betaReduce:: Lexp -> Lexp
 betaReduce v@(Atom atom) = v
-betaReduce lexp@(Apply exp1@(Lambda (Atom x) (Atom y)) exp2)
-	| x == y = exp2
-	| otherwise = (Atom y)
--- betaReduce lexp@(Apply exp1@(Lambda (Atom x) exp) exp2) = exp' = betaReduce exp
-betaReduce lexp@(Lambda (Atom atom) exp) = Atom atom  
-betaReduce lexp@(Apply exp1 exp2) = exp2
+betaReduce lexp@(Apply (Lambda with@(Atom _) exp1) exp2) = betaSub exp1 with exp2
+betaReduce lexp@(Apply exp1 exp2) = let exp1' = betaReduce(exp1) 
+                                        exp2' = betaReduce(exp2)
+                                    in (Apply exp1' exp2')
+betaReduce lexp@(Lambda exp1 exp2) = let exp1' = betaReduce(exp1) 
+                                         exp2' = betaReduce(exp2)
+                                     in (Lambda exp1' exp2')
 
---betaReduce lexp@(Lambda (Atom atom) exp) = (Lambda (Atom atom) (betaReduce exp)) 
---betaReduce lexp = lexp
---betaReduce lexp@(Apply exp1 exp2) = (Apply (betaReduce exp1) (betaReduce exp2))
+-- betaSub -- 
+-- input: In this order: the expression to be substituted, the variable argument, the new expression
+betaSub:: Lexp -> Lexp -> Lexp -> Lexp
+betaSub v@(Atom _) with exp = if v == with then exp else v
+betaSub (Apply exp1 exp2) with exp = let exp1' = betaSub exp1 with exp
+                                         exp2' = betaSub exp2 with exp
+                                        in (Apply exp1' exp2')
+betaSub (Lambda exp1 exp2) with exp = let exp1' = betaSub exp1 with exp
+                                          exp2' = betaSub exp2 with exp
+                                         in (Lambda exp1' exp2') 
 
 reducers:: Lexp -> Lexp 
-reducers lexp = alphaRename lexp
+reducers lexp = alphaRename lexp --etaConvert(betaReduce lexp)
 
 -- TODO: Eta-Conversion --
--- \v.(E v) if v == v AND isBound(v) -> E, else \v.(E v) 
+-- \v.(E v) if v == v AND v is not in E -> E, else \v.(E v) 
 
---etaConvert:: Lexp -> Lexp
---etaConvert v@(Atom atom) = v
---etaConvert lexp@(Lambda (Atom x) exp) = lexp -- eta reduce here 
+etaConvert:: Lexp -> Lexp
+etaConvert v@(Atom _) = v
+etaConvert lexp@(Lambda v1@(Atom _) exp@(Apply exp1 v2@(Atom _)))
+        | v1 == v2 = etaSub lexp v1 -- eta reduce here
+        | otherwise = lexp
+etaConvert lexp = lexp 
+
+etaSub:: Lexp -> Lexp -> Lexp
+etaSub lexp@(Apply left@(Atom _) right@(Atom _)) atom
+        | left == atom || right == atom = atom
+        | otherwise = lexp
+etaSub e@(Atom _) v 
+        | e == v = v
+        | otherwise = e
+etaSub lexp@(Lambda v1@(Atom _) exp@(Apply exp1 v2)) v
+        | (etaSub exp1 v) ==  exp1 = exp1
+        | otherwise = lexp
+etaSub (Apply exp1 exp2) v = let exp1' = etaSub exp1 v 
+                                 exp2' = etaSub exp2 v
+                             in (Apply exp1' exp2')
+                                
 
 -- Possible need for isFree, isBound, some helper functions
 
