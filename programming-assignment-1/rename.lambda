@@ -1,4 +1,7 @@
 (\y.y y)
 (\y.x y)
+(\z.(z z) z)
+(\f.(f y) f)
 (\z.(z y) z)
 (\z.(z y) (z x))
+(\x.\y.(y x) (y w))
