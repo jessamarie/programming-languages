@@ -1,4 +1,4 @@
-import PA1HelperDebug
+import PA1Helper
 -- Same thing, but when printed Lexp's are easier to copy and paste into Haskell
 -- import PA1HelperDebug
 
@@ -23,40 +23,84 @@ id' lexp@(Lambda (Atom _) _) = lexp
 id' lexp@(Apply _ _) = lexp 
 
 -------------------------------- BEGIN MY CODE ---------------------------
--- QUESTIONS:
 
--- TODO: Alpha-Renaming --
--- HANDLE: (Atom atom), (Lambda (Atom x) exp)
+-- Helpful functions given by professor ------
 
-alphaRename :: Lexp -> Lexp
-alphaRename v@(Atom atom) = v
-alphaRename (Lambda (Atom a) exp) = let exp' = alphaRename(exp)
-                                    in (Lambda(Atom a) exp')
-alphaRename lexp@(Apply exp1 exp2) = let exp1' = alphaRename(exp1) 
-                                         exp2' = alphaRename(exp2) 
-                                     in (Apply exp1' exp2') 
+foldr' :: (a->b->b) -> b -> [a] -> b
+foldr' _ u []    = u
+foldr' f u (h:t) = f h (foldr' f u t)
 
-atoms = [Atom "a", Atom "c", Atom "d", Atom "f", Atom "g", Atom "h"]
-getNewAtom:: Lexp -> Lexp
-getNewAtom v@(Atom _) = v
-getNewAtom lexp@(Lambda(Atom x) (Atom y))
-         | x == y = (Lambda(Atom "l") (Atom "l"))
-         | otherwise = (Lambda(Atom "l") (Atom y))
+filter' :: (a-> Bool) -> [a] -> [a]
+filter' p = foldr' 
+            (\h t ->  if p h 
+                      then h:t 
+                      else t) []
 
--- Beta-reduction in Applicative Order --
+remove :: (Eq a) => a -> [a] -> [a]
+remove x = filter' (\v -> v/=x)
+
+remove' :: (Eq a) => a -> [a] -> [a]
+remove' x = filter' (/=x)
+
+iscombinator :: Lexp -> Bool
+iscombinator e = freevars e == []
+
+freevars :: Lexp -> [String]
+freevars (Atom s)            = [s]
+freevars (Lambda (Atom v) e) = remove v (freevars e)
+freevars (Apply exp1 exp2)       = (freevars exp1)++(freevars exp2)
+
+-----------------------------------------------------------------------------
+
+-- Alpha-Renaming ---------------------------------------------------------------
+-- The following functions replace the bound variables of all lambda expressions
+-- This avoids the need to check for free variables, by just renaming all bound ones
+-- with new variables
+
+atoms = [Atom "a", Atom "b", Atom "c", Atom "d", Atom "e", Atom "f", Atom "g", Atom "h"]
+
+alphaRename:: Lexp -> Lexp
+alphaRename v@(Atom _)                   = v
+alphaRename lexp@(Lambda v@(Atom _) exp) = let newAtom = getNewAtom atoms (getCurrentAtoms lexp)
+                                               exp'    = alphaRename(alphaSub (alphaRename v) newAtom exp)
+                                           in (Lambda newAtom exp')
+alphaRename (Lambda exp1 exp2)           = (Lambda (alphaRename exp1) (alphaRename exp2))
+alphaRename (Apply exp1 exp2)            = (Apply (alphaRename exp1) (alphaRename exp2))
+
+getNewAtom:: [Lexp] -> [Lexp] -> Lexp
+getNewAtom (h:t) []        = h
+getNewAtom (h:t) current
+          | elem h current = getNewAtom t current
+          | otherwise      = h
+
+getCurrentAtoms :: Lexp -> [Lexp]
+getCurrentAtoms v@(Atom _)        = [v] 
+getCurrentAtoms (Lambda a exp1)   = [a] ++ (getCurrentAtoms exp1)
+getCurrentAtoms (Apply exp1 exp2) = (getCurrentAtoms exp1) ++ (getCurrentAtoms exp2)
+
+alphaSub:: Lexp -> Lexp -> Lexp -> Lexp
+alphaSub rep@(Atom _) v1 v2@(Atom _)
+     | rep == v2 = v1
+     | otherwise = v2
+alphaSub rep@(Atom _) v1 (Lambda v2@(Atom _) e) = let exp' = (alphaSub rep v1 e)
+                                                  in (Lambda v2 exp')
+alphaSub rep@(Atom _) v1 exp@(Apply exp1 exp2) = let exp1' = (alphaSub rep v1 exp1)
+                                                     exp2' = (alphaSub rep v1 exp2)
+                                                 in (Apply exp1' exp2')
+
+-- Beta-reduction in Applicative Order --------------------------------------------
 -- This function simplifies the expression
 betaReduce:: Lexp -> Lexp
 betaReduce v@(Atom atom) = v
 betaReduce lexp@(Apply (Lambda with@(Atom _) exp1) exp2) = betaSub exp1 with exp2
-betaReduce lexp@(Apply exp1 exp2) = let exp1' = betaReduce(exp1) 
-                                        exp2' = betaReduce(exp2)
-                                    in (Apply exp1' exp2')
+betaReduce lexp@(Apply exp1 exp2)  = let exp1' = betaReduce(exp1) 
+                                         exp2' = betaReduce(exp2)
+                                     in (Apply exp1' exp2')
 betaReduce lexp@(Lambda exp1 exp2) = let exp1' = betaReduce(exp1) 
                                          exp2' = betaReduce(exp2)
                                      in (Lambda exp1' exp2')
 
--- betaSub -- 
--- input: In this order: the expression to be substituted, the variable argument, the new expression
+
 betaSub:: Lexp -> Lexp -> Lexp -> Lexp
 betaSub v@(Atom _) with exp = if v == with then exp else v
 betaSub (Apply exp1 exp2) with exp = let exp1' = betaSub exp1 with exp
@@ -66,8 +110,6 @@ betaSub (Lambda exp1 exp2) with exp = let exp1' = betaSub exp1 with exp
                                           exp2' = betaSub exp2 with exp
                                          in (Lambda exp1' exp2') 
 
-reducers:: Lexp -> Lexp 
-reducers lexp = alphaRename lexp --etaConvert(betaReduce lexp)
 
 -- TODO: Eta-Conversion --
 -- \v.(E v) if v == v AND v is not in E -> E, else \v.(E v) 
@@ -75,7 +117,7 @@ reducers lexp = alphaRename lexp --etaConvert(betaReduce lexp)
 etaConvert:: Lexp -> Lexp
 etaConvert v@(Atom _) = v
 etaConvert lexp@(Lambda v1@(Atom _) exp@(Apply exp1 v2@(Atom _)))
-        | v1 == v2 = etaSub lexp v1 -- eta reduce here
+        | v1 == v2 = etaSub lexp v1 
         | otherwise = lexp
 etaConvert lexp = lexp 
 
@@ -92,6 +134,10 @@ etaSub lexp@(Lambda v1@(Atom _) exp@(Apply exp1 v2)) v
 etaSub (Apply exp1 exp2) v = let exp1' = etaSub exp1 v 
                                  exp2' = etaSub exp2 v
                              in (Apply exp1' exp2')
+
+reducers:: Lexp -> Lexp 
+
+reducers lexp = etaConvert (betaReduce (alphaRename lexp))
                                 
 
 -- Possible need for isFree, isBound, some helper functions
