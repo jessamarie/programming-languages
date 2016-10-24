@@ -1,0 +1,40 @@
+17:27:07,956 I: (ErlangCore.java:63) : Starting CORE Thread[main,6,main]
+17:27:07,978 I: (ErlangCore.java:78) : *** starting Erlide v0.33.0.201605251547 (core=0.32.2.201605251547) (model api=0.32.1.201605251547) *** (UTF-8) ui
+17:27:07,985 I: (ErlangCore.java:85) : Started CORE
+17:27:07,986 F: (ErlangPlugin.java:89) : Core started
+17:30:37,446 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+17:30:37,451 F: (BackendFactory.java:47) : Create build backend 18
+17:30:37,452 F: (BackendFactory.java:54) : Create backend 18_564ea_jessa_67520c
+17:30:37,471 F: (OtpNodeProxy.java:302) : Runtime 18_564ea_jessa_67520c@127.0.0.1 starting
+17:30:37,473 F: (OtpNodeProxy.java:420) : START node :> [/usr/lib/erlang/bin/erl, -name, 18_564ea_jessa_67520c@127.0.0.1, -setcookie, erlide] *** /home/jessa/Desktop/programming-languages
+17:30:37,488 F: (OtpNodeProxy.java:213) : 18_564ea_jessa_67520c@127.0.0.1: waiting connection to peer... 
+17:30:38,360 F: (OtpNodeProxy.java:220) : connected!
+17:30:38,480 F: (OtpNodeProxy.java:307) : Runtime 18_564ea_jessa_67520c@127.0.0.1 running
+17:30:38,718 F: (LogEventHandler.java:27) : info: {"Monitoring java node",'jerlide_f67522e@127.0.0.1'}
+17:30:38,721 F: (LogEventHandler.java:27) : info: {"Start monitor process: ",10000000,50000000}
+17:31:02,616 F: (ErlangNodeLaunchShortcut.java:114) : ** Launch :: main.erl
+17:31:03,028 F: (BackendManager.java:90) : create execution backend PA2
+17:31:03,029 F: (BackendFactory.java:54) : Create backend PA2
+17:31:03,030 F: (OtpNodeProxy.java:302) : Runtime PA2@jessa-VirtualBox starting
+17:31:03,031 F: (OtpNodeProxy.java:420) : START node :> [/usr/lib/erlang/bin/erl, -sname, PA2@jessa-VirtualBox, -setcookie, erlide] *** /home/jessa
+17:31:03,037 F: (OtpNodeProxy.java:213) : PA2@jessa-VirtualBox: waiting connection to peer... 
+17:31:03,446 F: (OtpNodeProxy.java:220) : connected!
+17:31:03,621 F: (OtpNodeProxy.java:307) : Runtime PA2@jessa-VirtualBox running
+17:31:03,622 F: (LogEventHandler.java:27) : info: {"Monitoring java node",'jerlide_f67b5fc@jessa-VirtualBox'}
+17:31:03,622 F: (LogEventHandler.java:27) : info: {"Start monitor process: ",10000000,50000000}
+17:31:04,048 F: (ErlConsoleManager.java:51) : console ADDED to org.erlide.backend.api.BackendData@5e435f0d
+17:31:04,222 F: (ErlangLaunchDelegate.java:108) : Started erts: PA2 >> PA2
+17:32:45,427 F: (OtpNodeProxy.java:312) : Runtime 18_564ea_jessa_67520c@127.0.0.1 stopping
+17:32:45,437 F: (OtpNodeProxy.java:312) : Runtime 564ea_jessa_63fa26_erlide@127.0.0.1 stopping
+17:32:45,480 F: (OtpNodeProxy.java:272) : Runtime 18_564ea_jessa_67520c@127.0.0.1 terminated
+17:32:45,509 F: (OtpNodeProxy.java:312) : Runtime PA2@jessa-VirtualBox stopping
+17:32:45,535 F: (OtpNodeProxy.java:272) : Runtime 564ea_jessa_63fa26_erlide@127.0.0.1 terminated
+17:32:45,982 W: (OtpNodeProxy.java:281) : Runtime PA2@jessa-VirtualBox crashed, exit code: 143.
+
+--------------------------------------------------------------
+*** RpcMonitor statistics
+ - 59 calls
+
+RpcMonitor was not enabled.
+
+Use -Derlide.rpcmonitor to enable it.
