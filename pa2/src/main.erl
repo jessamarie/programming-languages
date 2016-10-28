@@ -2,12 +2,9 @@
 -compile(export_all).
 
 do_work(StartSeq, TargetSeq, PID) ->
-  Node = get_random_node(),
-  
-  spawn(Node, main, run, [StartSeq, TargetSeq, self()]),
-  timer:sleep(10000),
+  run(StartSeq, TargetSeq, self()),
   receive Inversions ->
-	io:format("Inversion Count: ~w ~n",[Inversions])
+	io:format("~w~n",[Inversions]) % Prints total inversions
   end,
   PID ! {ok, 4}.
   
@@ -32,7 +29,7 @@ start() ->
 %%----------------------------------------------------------------------
 run(InputSequence, TargetSequence, PID) ->
   Seq = map_get_sequence(fun get_index/2, TargetSequence, InputSequence, 1), 
-  spawn(main, mergesort, [Seq, 0, self(), parent]),
+  spawn(get_random_node(), main, mergesort, [Seq, 0, self(), parent]),
   receive {_, Inversions, _, _} -> 
      PID ! Inversions
   end.
@@ -82,8 +79,8 @@ mergesort([], Count, Parent, Position) -> Parent ! {[], Count, self(), Position}
 mergesort([E], Count, Parent, Position) -> Parent ! {[E], Count, self(), Position};
 mergesort(List, Inversions, Parent, Position) ->
 	{Left, Right} = lists:split(trunc(length(List)/2), List),
-	spawn(main, mergesort, [Left, Inversions, self(), left]),
-	spawn(main, mergesort, [Right, Inversions, self(), right]),
+	spawn(get_random_node(), main, mergesort, [Left, Inversions, self(), left]),
+	spawn(get_random_node(), main, mergesort, [Right, Inversions, self(), right]),
 	
 	receiveInfo(Parent, Position).
 
