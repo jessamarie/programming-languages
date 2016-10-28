@@ -1,783 +1,105 @@
-18:07:52,361 I: (ErlangCore.java:63) : Starting CORE Thread[main,6,main]
-18:07:52,368 I: (ErlangCore.java:78) : *** starting Erlide v0.33.0.201605251547 (core=0.32.2.201605251547) (model api=0.32.1.201605251547) *** (UTF-8) ui
-18:07:52,369 I: (ErlangCore.java:85) : Started CORE
-18:07:52,369 F: (ErlangPlugin.java:89) : Core started
-18:08:22,623 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:08:22,624 F: (BackendFactory.java:47) : Create build backend 18
-18:08:22,625 F: (BackendFactory.java:54) : Create backend 18_564ea_jessa_2fd661
-18:08:22,634 F: (OtpNodeProxy.java:302) : Runtime 18_564ea_jessa_2fd661@127.0.0.1 starting
-18:08:22,643 F: (OtpNodeProxy.java:420) : START node :> [/usr/lib/erlang/bin/erl, -name, 18_564ea_jessa_2fd661@127.0.0.1, -setcookie, erlide] *** /home/jessa/Desktop/programming-languages
-18:08:22,651 F: (OtpNodeProxy.java:213) : 18_564ea_jessa_2fd661@127.0.0.1: waiting connection to peer... 
-18:08:23,343 F: (LogEventHandler.java:27) : info: {not_found_2,"erlide_scan_util:find_line_w_offset",5171,[]}
-18:08:23,579 F: (OtpNodeProxy.java:220) : connected!
-18:08:23,685 F: (OtpNodeProxy.java:307) : Runtime 18_564ea_jessa_2fd661@127.0.0.1 running
-18:08:23,759 F: (LogEventHandler.java:27) : info: {"Monitoring java node",'jerlide_82fd677@127.0.0.1'}
-18:08:23,760 F: (LogEventHandler.java:27) : info: {"Start monitor process: ",10000000,50000000}
-18:08:43,731 F: (LogEventHandler.java:27) : info: {not_found_2,"erlide_scan_util:find_line_w_offset",5171,[]}
-18:09:07,243 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:10:18,511 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:14:33,916 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:14:44,440 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:15:17,328 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:15:25,134 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:15:51,978 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:17:13,836 F: (ErlParser.java:342) : unknown: other
-18:17:13,936 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:17:20,925 F: (ErlParser.java:342) : unknown: other
-18:17:36,527 F: (ErlParser.java:342) : unknown: other
-18:17:37,384 F: (ErlParser.java:342) : unknown: other
-18:17:39,548 F: (ErlParser.java:342) : unknown: other
-18:17:41,269 F: (ErlParser.java:342) : unknown: other
-18:17:42,756 F: (ErlParser.java:342) : unknown: other
-18:17:44,132 F: (ErlParser.java:342) : unknown: other
-18:17:48,215 F: (ErlParser.java:342) : unknown: other
-18:17:49,848 F: (ErlParser.java:342) : unknown: other
-18:17:49,934 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:18:03,820 F: (ErlParser.java:342) : unknown: other
-18:18:05,410 F: (ErlParser.java:342) : unknown: other
-18:18:06,280 F: (ErlParser.java:342) : unknown: other
-18:18:06,337 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:18:16,485 F: (ErlParser.java:342) : unknown: other
-18:18:28,256 F: (ErlParser.java:342) : unknown: other
-18:18:30,273 F: (ErlParser.java:342) : unknown: other
-18:18:32,775 F: (ErlParser.java:342) : unknown: other
-18:18:34,040 F: (ErlParser.java:342) : unknown: other
-18:18:35,361 F: (ErlParser.java:342) : unknown: other
-18:18:36,873 F: (ErlParser.java:342) : unknown: other
-18:18:42,780 F: (ErlParser.java:342) : unknown: other
-18:18:42,863 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:18:45,556 F: (ErlParser.java:342) : unknown: other
-18:18:46,575 F: (ErlParser.java:342) : unknown: other
-18:18:50,003 F: (ErlParser.java:342) : unknown: other
-18:18:51,852 F: (ErlParser.java:342) : unknown: other
-18:18:52,593 F: (ErlParser.java:342) : unknown: other
-18:18:54,730 F: (ErlParser.java:342) : unknown: other
-18:18:55,710 F: (ErlParser.java:342) : unknown: other
-18:18:59,535 F: (ErlParser.java:342) : unknown: other
-18:19:00,426 F: (ErlParser.java:342) : unknown: other
-18:19:01,970 F: (ErlParser.java:342) : unknown: other
-18:19:02,058 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:19:05,611 F: (ErlParser.java:342) : unknown: other
-18:19:07,681 F: (ErlParser.java:342) : unknown: other
-18:19:11,255 F: (ErlParser.java:342) : unknown: other
-18:19:43,001 F: (ErlParser.java:342) : unknown: other
-18:19:44,659 F: (ErlParser.java:342) : unknown: other
-18:19:46,826 F: (ErlParser.java:342) : unknown: other
-18:19:47,027 F: (ErlParser.java:342) : unknown: other
-18:19:50,028 F: (ErlParser.java:342) : unknown: other
-18:19:51,136 F: (ErlParser.java:342) : unknown: other
-18:19:51,516 F: (ErlParser.java:342) : unknown: other
-18:19:53,889 F: (ErlParser.java:342) : unknown: other
-18:19:56,812 F: (ErlParser.java:342) : unknown: other
-18:19:57,199 F: (ErlParser.java:342) : unknown: other
-18:19:57,476 F: (ErlParser.java:342) : unknown: other
-18:19:57,874 F: (ErlParser.java:342) : unknown: other
-18:19:58,711 F: (ErlParser.java:342) : unknown: other
-18:19:58,786 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:20:05,954 F: (ErlParser.java:342) : unknown: other
-18:20:07,439 F: (ErlParser.java:342) : unknown: other
-18:20:08,452 F: (ErlParser.java:342) : unknown: other
-18:20:35,645 F: (ErlParser.java:342) : unknown: other
-18:20:37,411 F: (ErlParser.java:342) : unknown: other
-18:20:37,797 F: (ErlParser.java:342) : unknown: other
-18:20:40,547 F: (ErlParser.java:342) : unknown: other
-18:20:40,805 F: (ErlParser.java:342) : unknown: other
-18:20:41,317 F: (ErlParser.java:342) : unknown: other
-18:20:42,911 F: (ErlParser.java:342) : unknown: other
-18:20:42,973 F: (ErlParser.java:342) : unknown: other
-18:20:44,142 F: (ErlParser.java:342) : unknown: other
-18:20:44,380 F: (ErlParser.java:342) : unknown: other
-18:20:46,759 F: (ErlParser.java:342) : unknown: other
-18:20:49,409 F: (ErlParser.java:342) : unknown: other
-18:20:50,423 F: (ErlParser.java:342) : unknown: other
-18:20:52,481 F: (ErlParser.java:342) : unknown: other
-18:21:01,952 F: (ErlParser.java:342) : unknown: other
-18:21:04,139 F: (ErlParser.java:342) : unknown: other
-18:21:30,874 F: (ErlParser.java:342) : unknown: other
-18:21:31,666 F: (ErlParser.java:342) : unknown: other
-18:21:32,671 F: (ErlParser.java:342) : unknown: other
-18:21:34,018 F: (ErlParser.java:342) : unknown: other
-18:21:35,372 F: (ErlParser.java:342) : unknown: other
-18:21:37,383 F: (ErlParser.java:342) : unknown: other
-18:21:42,225 F: (ErlParser.java:342) : unknown: other
-18:21:45,609 F: (ErlParser.java:342) : unknown: other
-18:21:58,066 F: (ErlParser.java:342) : unknown: other
-18:21:58,955 F: (ErlParser.java:342) : unknown: other
-18:22:02,064 F: (ErlParser.java:342) : unknown: other
-18:22:03,758 F: (ErlParser.java:342) : unknown: other
-18:22:05,190 F: (ErlParser.java:342) : unknown: other
-18:22:05,243 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:22:08,173 F: (ErlParser.java:342) : unknown: other
-18:22:10,373 F: (ErlParser.java:342) : unknown: other
-18:22:11,753 F: (ErlParser.java:342) : unknown: other
-18:22:11,835 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:22:15,344 F: (ErlParser.java:342) : unknown: other
-18:22:17,325 F: (ErlParser.java:342) : unknown: other
-18:22:19,372 F: (ErlParser.java:342) : unknown: other
-18:22:22,506 F: (ErlParser.java:342) : unknown: other
-18:22:22,588 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:22:32,831 F: (ErlParser.java:342) : unknown: other
-18:22:34,229 F: (ErlParser.java:342) : unknown: other
-18:22:35,083 F: (ErlParser.java:342) : unknown: other
-18:22:35,207 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:22:37,872 F: (ErlParser.java:342) : unknown: other
-18:22:38,648 F: (ErlParser.java:342) : unknown: other
-18:22:38,720 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:22:41,465 F: (ErlParser.java:342) : unknown: other
-18:22:43,150 F: (ErlParser.java:342) : unknown: other
-18:22:45,143 F: (ErlParser.java:342) : unknown: other
-18:22:45,223 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:22:48,626 F: (ErlParser.java:342) : unknown: other
-18:22:50,851 F: (ErlParser.java:342) : unknown: other
-18:22:58,623 F: (ErlParser.java:342) : unknown: other
-18:23:03,337 F: (ErlParser.java:342) : unknown: other
-18:23:04,967 F: (ErlParser.java:342) : unknown: other
-18:23:06,818 F: (ErlParser.java:342) : unknown: other
-18:23:08,554 F: (ErlParser.java:342) : unknown: other
-18:23:09,339 F: (ErlParser.java:342) : unknown: other
-18:23:09,410 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:23:11,846 F: (ErlParser.java:342) : unknown: other
-18:23:13,859 F: (ErlParser.java:342) : unknown: other
-18:23:13,930 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:23:15,039 F: (ErlParser.java:342) : unknown: other
-18:23:15,116 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:23:16,796 F: (ErlParser.java:342) : unknown: other
-18:23:17,384 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:23:25,243 F: (ErlParser.java:342) : unknown: other
-18:23:25,701 F: (ErlParser.java:342) : unknown: other
-18:23:30,286 F: (ErlParser.java:342) : unknown: other
-18:23:32,096 F: (ErlParser.java:342) : unknown: other
-18:23:32,550 F: (ErlParser.java:342) : unknown: other
-18:23:35,097 F: (ErlParser.java:342) : unknown: other
-18:23:37,927 F: (ErlParser.java:342) : unknown: other
-18:23:39,808 F: (ErlParser.java:342) : unknown: other
-18:23:39,827 F: (ErlParser.java:342) : unknown: other
-18:23:42,164 F: (ErlParser.java:342) : unknown: other
-18:23:42,772 F: (ErlParser.java:342) : unknown: other
-18:23:42,897 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:25:08,209 F: (ErlParser.java:342) : unknown: other
-18:25:09,603 F: (ErlParser.java:342) : unknown: other
-18:25:11,831 F: (ErlParser.java:342) : unknown: other
-18:25:12,051 F: (ErlParser.java:342) : unknown: other
-18:25:16,264 F: (ErlParser.java:342) : unknown: other
-18:25:17,607 F: (ErlParser.java:342) : unknown: other
-18:25:18,581 F: (ErlParser.java:342) : unknown: other
-18:25:20,681 F: (ErlParser.java:342) : unknown: other
-18:25:21,862 F: (ErlParser.java:342) : unknown: other
-18:25:24,122 F: (ErlParser.java:342) : unknown: other
-18:25:25,948 F: (ErlParser.java:342) : unknown: other
-18:25:26,598 F: (ErlParser.java:342) : unknown: other
-18:25:28,953 F: (ErlParser.java:342) : unknown: other
-18:25:51,401 F: (ErlParser.java:342) : unknown: other
-18:25:54,661 F: (ErlParser.java:342) : unknown: other
-18:25:54,850 F: (ErlParser.java:342) : unknown: other
-18:26:04,580 F: (ErlParser.java:342) : unknown: other
-18:26:08,239 F: (ErlParser.java:342) : unknown: other
-18:26:17,868 F: (ErlParser.java:342) : unknown: other
-18:26:20,497 F: (ErlParser.java:342) : unknown: other
-18:26:20,548 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:26:24,625 F: (ErlParser.java:342) : unknown: other
-18:26:26,068 F: (ErlParser.java:342) : unknown: other
-18:26:28,046 F: (ErlParser.java:342) : unknown: other
-18:26:29,632 F: (ErlParser.java:342) : unknown: other
-18:26:29,772 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:31:10,586 F: (ErlParser.java:342) : unknown: other
-18:42:05,033 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:43:26,507 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:43:31,825 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:44:41,141 F: (ErlParser.java:342) : unknown: other
-18:44:43,375 F: (ErlParser.java:342) : unknown: other
-18:44:43,462 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:46:01,223 F: (ErlParser.java:342) : unknown: other
-18:46:02,248 F: (ErlParser.java:342) : unknown: other
-18:46:05,532 F: (ErlParser.java:342) : unknown: other
-18:46:05,609 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:47:37,669 F: (ErlParser.java:342) : unknown: other
-18:47:39,810 F: (ErlParser.java:342) : unknown: other
-18:47:50,278 F: (ErlParser.java:342) : unknown: other
-18:47:50,396 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:48:24,669 F: (ErlParser.java:342) : unknown: other
-18:48:24,836 F: (ErlParser.java:342) : unknown: other
-18:48:26,162 F: (ErlParser.java:342) : unknown: other
-18:48:27,899 F: (ErlParser.java:342) : unknown: other
-18:48:27,979 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:48:30,276 F: (ErlParser.java:342) : unknown: other
-18:48:30,618 F: (ErlParser.java:342) : unknown: other
-18:48:32,710 F: (ErlParser.java:342) : unknown: other
-18:48:32,931 F: (ErlParser.java:342) : unknown: other
-18:48:33,155 F: (ErlParser.java:342) : unknown: other
-18:48:36,888 F: (ErlParser.java:342) : unknown: other
-18:48:46,252 F: (ErlParser.java:342) : unknown: other
-18:48:48,156 F: (ErlParser.java:342) : unknown: other
-18:48:49,794 F: (ErlParser.java:342) : unknown: other
-18:48:51,827 F: (ErlParser.java:342) : unknown: other
-18:48:52,597 F: (ErlParser.java:342) : unknown: other
-18:48:53,673 F: (ErlParser.java:342) : unknown: other
-18:48:57,540 F: (ErlParser.java:342) : unknown: other
-18:48:59,440 F: (ErlParser.java:342) : unknown: other
-18:49:00,249 F: (ErlParser.java:342) : unknown: other
-18:49:02,097 F: (ErlParser.java:342) : unknown: other
-18:49:02,173 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:50:24,654 F: (ErlParser.java:342) : unknown: other
-18:50:26,671 F: (ErlParser.java:342) : unknown: other
-18:50:31,560 F: (ErlParser.java:342) : unknown: other
-18:50:40,012 F: (ErlParser.java:342) : unknown: other
-18:50:41,576 F: (ErlParser.java:342) : unknown: other
-18:50:45,835 F: (ErlParser.java:342) : unknown: other
-18:50:46,258 F: (ErlParser.java:342) : unknown: other
-18:52:45,006 F: (ErlParser.java:342) : unknown: other
-18:52:48,769 F: (ErlParser.java:342) : unknown: other
-18:52:49,781 F: (ErlParser.java:342) : unknown: other
-18:52:50,434 F: (ErlParser.java:342) : unknown: other
-18:52:59,574 F: (ErlParser.java:342) : unknown: other
-18:53:01,114 F: (ErlParser.java:342) : unknown: other
-18:53:09,238 F: (ErlParser.java:342) : unknown: other
-18:53:10,720 F: (ErlParser.java:342) : unknown: other
-18:53:10,939 F: (ErlParser.java:342) : unknown: other
-18:53:32,519 F: (ErlParser.java:342) : unknown: other
-18:53:33,389 F: (ErlParser.java:342) : unknown: other
-18:53:36,970 F: (ErlParser.java:342) : unknown: other
-18:53:39,831 F: (ErlParser.java:342) : unknown: other
-18:53:50,092 F: (ErlParser.java:342) : unknown: other
-18:53:51,748 F: (ErlParser.java:342) : unknown: other
-18:53:57,040 F: (ErlParser.java:342) : unknown: other
-18:53:57,147 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:54:06,274 F: (ErlParser.java:342) : unknown: other
-18:54:06,310 F: (ErlParser.java:342) : unknown: other
-18:55:07,590 F: (ErlParser.java:342) : unknown: other
-18:55:10,604 F: (ErlParser.java:342) : unknown: other
-18:55:11,547 F: (ErlParser.java:342) : unknown: other
-18:55:13,670 F: (ErlParser.java:342) : unknown: other
-18:55:17,652 F: (ErlParser.java:342) : unknown: other
-18:55:19,533 F: (ErlParser.java:342) : unknown: other
-18:55:21,731 F: (ErlParser.java:342) : unknown: other
-18:55:32,859 F: (ErlParser.java:342) : unknown: other
-18:55:33,136 F: (ErlParser.java:342) : unknown: other
-18:55:34,154 F: (ErlParser.java:342) : unknown: other
-18:55:36,393 F: (ErlParser.java:342) : unknown: other
-18:55:36,527 F: (ErlParser.java:342) : unknown: other
-18:55:39,148 F: (ErlParser.java:342) : unknown: other
-18:55:40,169 F: (ErlParser.java:342) : unknown: other
-18:55:40,285 F: (ErlParser.java:342) : unknown: other
-18:55:41,987 F: (ErlParser.java:342) : unknown: other
-18:55:43,381 F: (ErlParser.java:342) : unknown: other
-18:55:43,902 F: (ErlParser.java:342) : unknown: other
-18:55:45,618 F: (ErlParser.java:342) : unknown: other
-18:55:45,902 F: (ErlParser.java:342) : unknown: other
-18:55:49,123 F: (ErlParser.java:342) : unknown: other
-18:55:50,504 F: (ErlParser.java:342) : unknown: other
-18:55:54,109 F: (ErlParser.java:342) : unknown: other
-18:55:56,952 F: (ErlParser.java:342) : unknown: other
-18:55:59,229 F: (ErlParser.java:342) : unknown: other
-18:56:00,314 F: (ErlParser.java:342) : unknown: other
-18:56:00,698 F: (ErlParser.java:342) : unknown: other
-18:56:00,744 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:56:06,064 F: (ErlParser.java:342) : unknown: other
-18:56:06,347 F: (ErlParser.java:342) : unknown: other
-18:56:06,913 F: (ErlParser.java:342) : unknown: other
-18:56:10,693 F: (ErlParser.java:342) : unknown: other
-18:56:15,407 F: (ErlParser.java:342) : unknown: other
-18:56:16,879 F: (ErlParser.java:342) : unknown: other
-18:56:17,885 F: (ErlParser.java:342) : unknown: other
-18:56:24,215 F: (ErlParser.java:342) : unknown: other
-18:56:25,945 F: (ErlParser.java:342) : unknown: other
-18:56:27,038 F: (ErlParser.java:342) : unknown: other
-18:56:28,063 F: (ErlParser.java:342) : unknown: other
-18:56:29,990 F: (ErlParser.java:342) : unknown: other
-18:56:30,039 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:56:31,020 F: (ErlParser.java:342) : unknown: other
-18:56:31,852 F: (ErlParser.java:342) : unknown: other
-18:56:31,853 F: (ErlParser.java:342) : unknown: other
-18:56:31,941 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:57:41,070 F: (ErlParser.java:342) : unknown: other
-18:57:41,070 F: (ErlParser.java:342) : unknown: other
-18:57:41,864 F: (ErlParser.java:342) : unknown: other
-18:57:41,864 F: (ErlParser.java:342) : unknown: other
-18:57:44,836 F: (ErlParser.java:342) : unknown: other
-18:57:44,837 F: (ErlParser.java:342) : unknown: other
-18:57:45,859 F: (ErlParser.java:342) : unknown: other
-18:57:45,859 F: (ErlParser.java:342) : unknown: other
-18:57:47,550 F: (ErlParser.java:342) : unknown: other
-18:57:47,550 F: (ErlParser.java:342) : unknown: other
-18:57:49,335 F: (ErlParser.java:342) : unknown: other
-18:57:49,335 F: (ErlParser.java:342) : unknown: other
-18:57:51,045 F: (ErlParser.java:342) : unknown: other
-18:57:51,045 F: (ErlParser.java:342) : unknown: other
-18:57:53,285 F: (ErlParser.java:342) : unknown: other
-18:57:53,285 F: (ErlParser.java:342) : unknown: other
-18:57:56,233 F: (ErlParser.java:342) : unknown: other
-18:57:56,234 F: (ErlParser.java:342) : unknown: other
-18:57:59,437 F: (ErlParser.java:342) : unknown: other
-18:57:59,437 F: (ErlParser.java:342) : unknown: other
-18:58:01,278 F: (ErlParser.java:342) : unknown: other
-18:58:01,278 F: (ErlParser.java:342) : unknown: other
-18:58:01,487 F: (ErlParser.java:342) : unknown: other
-18:58:01,487 F: (ErlParser.java:342) : unknown: other
-18:58:03,122 F: (ErlParser.java:342) : unknown: other
-18:58:03,122 F: (ErlParser.java:342) : unknown: other
-18:58:05,659 F: (ErlParser.java:342) : unknown: other
-18:58:05,659 F: (ErlParser.java:342) : unknown: other
-18:58:07,303 F: (ErlParser.java:342) : unknown: other
-18:58:07,303 F: (ErlParser.java:342) : unknown: other
-18:58:07,547 F: (ErlParser.java:342) : unknown: other
-18:58:07,547 F: (ErlParser.java:342) : unknown: other
-18:58:09,251 F: (ErlParser.java:342) : unknown: other
-18:58:09,251 F: (ErlParser.java:342) : unknown: other
-18:58:14,965 F: (ErlParser.java:342) : unknown: other
-18:58:14,965 F: (ErlParser.java:342) : unknown: other
-18:58:16,750 F: (ErlParser.java:342) : unknown: other
-18:58:16,750 F: (ErlParser.java:342) : unknown: other
-18:58:17,870 F: (ErlParser.java:342) : unknown: other
-18:58:17,870 F: (ErlParser.java:342) : unknown: other
-18:58:21,631 F: (ErlParser.java:342) : unknown: other
-18:58:21,631 F: (ErlParser.java:342) : unknown: other
-18:58:21,696 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:58:45,728 F: (ErlParser.java:342) : unknown: other
-18:58:45,728 F: (ErlParser.java:342) : unknown: other
-18:58:46,775 F: (ErlParser.java:342) : unknown: other
-18:58:46,775 F: (ErlParser.java:342) : unknown: other
-18:58:52,068 F: (ErlParser.java:342) : unknown: other
-18:58:52,068 F: (ErlParser.java:342) : unknown: other
-18:58:52,635 F: (ErlParser.java:342) : unknown: other
-18:58:52,635 F: (ErlParser.java:342) : unknown: other
-18:58:55,569 F: (ErlParser.java:342) : unknown: other
-18:58:55,569 F: (ErlParser.java:342) : unknown: other
-18:58:56,243 F: (ErlParser.java:342) : unknown: other
-18:58:56,244 F: (ErlParser.java:342) : unknown: other
-18:58:56,244 F: (ErlParser.java:342) : unknown: other
-18:58:57,853 F: (ErlParser.java:342) : unknown: other
-18:58:57,854 F: (ErlParser.java:342) : unknown: other
-18:58:58,549 F: (ErlParser.java:342) : unknown: other
-18:58:58,549 F: (ErlParser.java:342) : unknown: other
-18:58:58,583 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:59:02,208 F: (ErlParser.java:342) : unknown: other
-18:59:02,208 F: (ErlParser.java:342) : unknown: other
-18:59:04,631 F: (ErlParser.java:342) : unknown: other
-18:59:04,631 F: (ErlParser.java:342) : unknown: other
-18:59:09,320 F: (ErlParser.java:342) : unknown: other
-18:59:09,321 F: (ErlParser.java:342) : unknown: other
-18:59:09,366 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-18:59:50,107 F: (ErlParser.java:342) : unknown: other
-18:59:50,107 F: (ErlParser.java:342) : unknown: other
-18:59:53,344 F: (ErlParser.java:342) : unknown: other
-18:59:53,344 F: (ErlParser.java:342) : unknown: other
-18:59:54,032 F: (ErlParser.java:342) : unknown: other
-18:59:54,032 F: (ErlParser.java:342) : unknown: other
-18:59:54,058 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:00:11,338 F: (ErlParser.java:342) : unknown: other
-19:00:11,338 F: (ErlParser.java:342) : unknown: other
-19:00:12,475 F: (ErlParser.java:342) : unknown: other
-19:00:12,475 F: (ErlParser.java:342) : unknown: other
-19:00:12,593 F: (ErlParser.java:342) : unknown: other
-19:00:12,593 F: (ErlParser.java:342) : unknown: other
-19:00:14,150 F: (ErlParser.java:342) : unknown: other
-19:00:14,150 F: (ErlParser.java:342) : unknown: other
-19:00:16,497 F: (ErlParser.java:342) : unknown: other
-19:00:16,497 F: (ErlParser.java:342) : unknown: other
-19:00:18,265 F: (ErlParser.java:342) : unknown: other
-19:00:18,265 F: (ErlParser.java:342) : unknown: other
-19:00:19,999 F: (ErlParser.java:342) : unknown: other
-19:00:20,002 F: (ErlParser.java:342) : unknown: other
-19:00:20,075 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:00:30,304 F: (ErlParser.java:342) : unknown: other
-19:00:30,304 F: (ErlParser.java:342) : unknown: other
-19:01:02,966 F: (ErlParser.java:342) : unknown: other
-19:01:02,967 F: (ErlParser.java:342) : unknown: other
-19:01:05,639 F: (ErlParser.java:342) : unknown: other
-19:01:05,639 F: (ErlParser.java:342) : unknown: other
-19:01:07,371 F: (ErlParser.java:342) : unknown: other
-19:01:07,371 F: (ErlParser.java:342) : unknown: other
-19:01:09,953 F: (ErlParser.java:342) : unknown: other
-19:01:09,953 F: (ErlParser.java:342) : unknown: other
-19:01:24,297 F: (ErlParser.java:342) : unknown: other
-19:01:24,298 F: (ErlParser.java:342) : unknown: other
-19:01:26,728 F: (ErlParser.java:342) : unknown: other
-19:01:26,728 F: (ErlParser.java:342) : unknown: other
-19:01:31,203 F: (ErlParser.java:342) : unknown: other
-19:01:31,203 F: (ErlParser.java:342) : unknown: other
-19:01:32,917 F: (ErlParser.java:342) : unknown: other
-19:01:32,917 F: (ErlParser.java:342) : unknown: other
-19:01:35,404 F: (ErlParser.java:342) : unknown: other
-19:01:35,404 F: (ErlParser.java:342) : unknown: other
-19:01:38,255 F: (ErlParser.java:342) : unknown: other
-19:01:38,255 F: (ErlParser.java:342) : unknown: other
-19:01:41,200 F: (ErlParser.java:342) : unknown: other
-19:01:41,201 F: (ErlParser.java:342) : unknown: other
-19:01:41,531 F: (ErlParser.java:342) : unknown: other
-19:01:41,531 F: (ErlParser.java:342) : unknown: other
-19:01:43,559 F: (ErlParser.java:342) : unknown: other
-19:01:43,559 F: (ErlParser.java:342) : unknown: other
-19:01:45,861 F: (ErlParser.java:342) : unknown: other
-19:01:45,861 F: (ErlParser.java:342) : unknown: other
-19:01:55,097 F: (ErlParser.java:342) : unknown: other
-19:01:55,097 F: (ErlParser.java:342) : unknown: other
-19:01:55,446 F: (ErlParser.java:342) : unknown: other
-19:01:55,446 F: (ErlParser.java:342) : unknown: other
-19:01:58,336 F: (ErlParser.java:342) : unknown: other
-19:01:58,336 F: (ErlParser.java:342) : unknown: other
-19:02:10,122 F: (ErlParser.java:342) : unknown: other
-19:02:10,125 F: (ErlParser.java:342) : unknown: other
-19:02:11,316 F: (ErlParser.java:342) : unknown: other
-19:02:11,316 F: (ErlParser.java:342) : unknown: other
-19:02:13,669 F: (ErlParser.java:342) : unknown: other
-19:02:13,670 F: (ErlParser.java:342) : unknown: other
-19:02:14,948 F: (ErlParser.java:342) : unknown: other
-19:02:14,948 F: (ErlParser.java:342) : unknown: other
-19:02:16,421 F: (ErlParser.java:342) : unknown: other
-19:02:16,421 F: (ErlParser.java:342) : unknown: other
-19:02:17,454 F: (ErlParser.java:342) : unknown: other
-19:02:17,455 F: (ErlParser.java:342) : unknown: other
-19:02:18,560 F: (ErlParser.java:342) : unknown: other
-19:02:18,561 F: (ErlParser.java:342) : unknown: other
-19:02:19,199 F: (ErlParser.java:342) : unknown: other
-19:02:19,199 F: (ErlParser.java:342) : unknown: other
-19:02:20,149 F: (ErlParser.java:342) : unknown: other
-19:02:20,149 F: (ErlParser.java:342) : unknown: other
-19:02:20,162 F: (ErlParser.java:342) : unknown: other
-19:02:20,163 F: (ErlParser.java:342) : unknown: other
-19:02:24,105 F: (ErlParser.java:342) : unknown: other
-19:02:24,105 F: (ErlParser.java:342) : unknown: other
-19:02:25,701 F: (ErlParser.java:342) : unknown: other
-19:02:25,702 F: (ErlParser.java:342) : unknown: other
-19:02:26,897 F: (ErlParser.java:342) : unknown: other
-19:02:26,897 F: (ErlParser.java:342) : unknown: other
-19:02:27,487 F: (ErlParser.java:342) : unknown: other
-19:02:27,487 F: (ErlParser.java:342) : unknown: other
-19:02:27,588 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:02:35,495 F: (ErlParser.java:342) : unknown: other
-19:02:35,495 F: (ErlParser.java:342) : unknown: other
-19:02:36,831 F: (ErlParser.java:342) : unknown: other
-19:02:36,831 F: (ErlParser.java:342) : unknown: other
-19:02:38,636 F: (ErlParser.java:342) : unknown: other
-19:02:38,636 F: (ErlParser.java:342) : unknown: other
-19:02:39,701 F: (ErlParser.java:342) : unknown: other
-19:02:39,702 F: (ErlParser.java:342) : unknown: other
-19:02:42,696 F: (ErlParser.java:342) : unknown: other
-19:02:42,696 F: (ErlParser.java:342) : unknown: other
-19:02:42,752 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:02:55,331 F: (ErlParser.java:342) : unknown: other
-19:02:55,331 F: (ErlParser.java:342) : unknown: other
-19:02:56,907 F: (ErlParser.java:342) : unknown: other
-19:02:56,907 F: (ErlParser.java:342) : unknown: other
-19:02:59,135 F: (ErlParser.java:342) : unknown: other
-19:02:59,135 F: (ErlParser.java:342) : unknown: other
-19:02:59,445 F: (ErlParser.java:342) : unknown: other
-19:02:59,445 F: (ErlParser.java:342) : unknown: other
-19:03:01,430 F: (ErlParser.java:342) : unknown: other
-19:03:01,430 F: (ErlParser.java:342) : unknown: other
-19:03:02,702 F: (ErlParser.java:342) : unknown: other
-19:03:02,702 F: (ErlParser.java:342) : unknown: other
-19:03:05,046 F: (ErlParser.java:342) : unknown: other
-19:03:05,046 F: (ErlParser.java:342) : unknown: other
-19:03:05,130 F: (ErlParser.java:342) : unknown: other
-19:03:05,131 F: (ErlParser.java:342) : unknown: other
-19:03:06,307 F: (ErlParser.java:342) : unknown: other
-19:03:06,307 F: (ErlParser.java:342) : unknown: other
-19:03:12,735 F: (ErlParser.java:342) : unknown: other
-19:03:12,735 F: (ErlParser.java:342) : unknown: other
-19:03:13,767 F: (ErlParser.java:342) : unknown: other
-19:03:13,767 F: (ErlParser.java:342) : unknown: other
-19:03:14,209 F: (ErlParser.java:342) : unknown: other
-19:03:14,209 F: (ErlParser.java:342) : unknown: other
-19:03:16,059 F: (ErlParser.java:342) : unknown: other
-19:03:16,060 F: (ErlParser.java:342) : unknown: other
-19:03:16,494 F: (ErlParser.java:342) : unknown: other
-19:03:16,494 F: (ErlParser.java:342) : unknown: other
-19:03:17,508 F: (ErlParser.java:342) : unknown: other
-19:03:17,508 F: (ErlParser.java:342) : unknown: other
-19:03:19,724 F: (ErlParser.java:342) : unknown: other
-19:03:19,724 F: (ErlParser.java:342) : unknown: other
-19:03:21,478 F: (ErlParser.java:342) : unknown: other
-19:03:21,479 F: (ErlParser.java:342) : unknown: other
-19:03:22,047 F: (ErlParser.java:342) : unknown: other
-19:03:22,054 F: (ErlParser.java:342) : unknown: other
-19:03:23,228 F: (ErlParser.java:342) : unknown: other
-19:03:23,228 F: (ErlParser.java:342) : unknown: other
-19:03:23,461 F: (ErlParser.java:342) : unknown: other
-19:03:23,461 F: (ErlParser.java:342) : unknown: other
-19:03:26,242 F: (ErlParser.java:342) : unknown: other
-19:03:26,242 F: (ErlParser.java:342) : unknown: other
-19:03:26,465 F: (ErlParser.java:342) : unknown: other
-19:03:26,466 F: (ErlParser.java:342) : unknown: other
-19:03:28,316 F: (ErlParser.java:342) : unknown: other
-19:03:28,316 F: (ErlParser.java:342) : unknown: other
-19:03:29,561 F: (ErlParser.java:342) : unknown: other
-19:03:29,561 F: (ErlParser.java:342) : unknown: other
-19:03:30,575 F: (ErlParser.java:342) : unknown: other
-19:03:30,576 F: (ErlParser.java:342) : unknown: other
-19:03:30,766 F: (ErlParser.java:342) : unknown: other
-19:03:30,767 F: (ErlParser.java:342) : unknown: other
-19:03:35,204 F: (ErlParser.java:342) : unknown: other
-19:03:35,207 F: (ErlParser.java:342) : unknown: other
-19:03:35,247 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:03:40,063 F: (ErlParser.java:342) : unknown: other
-19:03:40,063 F: (ErlParser.java:342) : unknown: other
-19:03:43,267 F: (ErlParser.java:342) : unknown: other
-19:03:43,267 F: (ErlParser.java:342) : unknown: other
-19:03:53,263 F: (ErlParser.java:342) : unknown: other
-19:03:53,264 F: (ErlParser.java:342) : unknown: other
-19:03:54,483 F: (ErlParser.java:342) : unknown: other
-19:03:54,484 F: (ErlParser.java:342) : unknown: other
-19:03:55,228 F: (ErlParser.java:342) : unknown: other
-19:03:55,228 F: (ErlParser.java:342) : unknown: other
-19:03:55,764 F: (ErlParser.java:342) : unknown: other
-19:03:55,764 F: (ErlParser.java:342) : unknown: other
-19:03:56,938 F: (ErlParser.java:342) : unknown: other
-19:03:56,939 F: (ErlParser.java:342) : unknown: other
-19:03:57,286 F: (ErlParser.java:342) : unknown: other
-19:03:57,286 F: (ErlParser.java:342) : unknown: other
-19:03:58,700 F: (ErlParser.java:342) : unknown: other
-19:03:58,700 F: (ErlParser.java:342) : unknown: other
-19:04:06,989 F: (ErlParser.java:342) : unknown: other
-19:04:06,989 F: (ErlParser.java:342) : unknown: other
-19:04:07,936 F: (ErlParser.java:342) : unknown: other
-19:04:07,936 F: (ErlParser.java:342) : unknown: other
-19:04:09,769 F: (ErlParser.java:342) : unknown: other
-19:04:09,770 F: (ErlParser.java:342) : unknown: other
-19:04:11,261 F: (ErlParser.java:342) : unknown: other
-19:04:11,261 F: (ErlParser.java:342) : unknown: other
-19:04:12,750 F: (ErlParser.java:342) : unknown: other
-19:04:12,751 F: (ErlParser.java:342) : unknown: other
-19:04:14,295 F: (ErlParser.java:342) : unknown: other
-19:04:14,295 F: (ErlParser.java:342) : unknown: other
-19:04:15,563 F: (ErlParser.java:342) : unknown: other
-19:04:15,563 F: (ErlParser.java:342) : unknown: other
-19:04:17,908 F: (ErlParser.java:342) : unknown: other
-19:04:17,911 F: (ErlParser.java:342) : unknown: other
-19:04:18,771 F: (ErlParser.java:342) : unknown: other
-19:04:18,771 F: (ErlParser.java:342) : unknown: other
-19:04:20,578 F: (ErlParser.java:342) : unknown: other
-19:04:20,578 F: (ErlParser.java:342) : unknown: other
-19:04:22,852 F: (ErlParser.java:342) : unknown: other
-19:04:22,852 F: (ErlParser.java:342) : unknown: other
-19:04:24,469 F: (ErlParser.java:342) : unknown: other
-19:04:24,470 F: (ErlParser.java:342) : unknown: other
-19:04:24,732 F: (ErlParser.java:342) : unknown: other
-19:04:24,732 F: (ErlParser.java:342) : unknown: other
-19:04:25,834 F: (ErlParser.java:342) : unknown: other
-19:04:25,835 F: (ErlParser.java:342) : unknown: other
-19:04:33,452 F: (ErlParser.java:342) : unknown: other
-19:04:33,453 F: (ErlParser.java:342) : unknown: other
-19:04:45,155 F: (ErlParser.java:342) : unknown: other
-19:04:45,155 F: (ErlParser.java:342) : unknown: other
-19:04:47,999 F: (ErlParser.java:342) : unknown: other
-19:04:47,999 F: (ErlParser.java:342) : unknown: other
-19:04:50,170 F: (ErlParser.java:342) : unknown: other
-19:04:50,170 F: (ErlParser.java:342) : unknown: other
-19:04:51,894 F: (ErlParser.java:342) : unknown: other
-19:04:51,895 F: (ErlParser.java:342) : unknown: other
-19:04:53,011 F: (ErlParser.java:342) : unknown: other
-19:04:53,011 F: (ErlParser.java:342) : unknown: other
-19:05:00,855 F: (ErlParser.java:342) : unknown: other
-19:05:00,855 F: (ErlParser.java:342) : unknown: other
-19:05:02,038 F: (ErlParser.java:342) : unknown: other
-19:05:02,040 F: (ErlParser.java:342) : unknown: other
-19:05:09,832 F: (ErlParser.java:342) : unknown: other
-19:05:09,832 F: (ErlParser.java:342) : unknown: other
-19:05:12,352 F: (ErlParser.java:342) : unknown: other
-19:05:12,355 F: (ErlParser.java:342) : unknown: other
-19:05:13,559 F: (ErlParser.java:342) : unknown: other
-19:05:13,560 F: (ErlParser.java:342) : unknown: other
-19:05:14,967 F: (ErlParser.java:342) : unknown: other
-19:05:14,967 F: (ErlParser.java:342) : unknown: other
-19:05:20,384 F: (ErlParser.java:342) : unknown: other
-19:05:20,385 F: (ErlParser.java:342) : unknown: other
-19:05:23,276 F: (ErlParser.java:342) : unknown: other
-19:05:23,277 F: (ErlParser.java:342) : unknown: other
-19:05:25,989 F: (ErlParser.java:342) : unknown: other
-19:05:25,989 F: (ErlParser.java:342) : unknown: other
-19:05:28,314 F: (ErlParser.java:342) : unknown: other
-19:05:28,315 F: (ErlParser.java:342) : unknown: other
-19:05:36,588 F: (ErlParser.java:342) : unknown: other
-19:05:36,588 F: (ErlParser.java:342) : unknown: other
-19:05:52,698 F: (ErlParser.java:342) : unknown: other
-19:05:52,698 F: (ErlParser.java:342) : unknown: other
-19:05:55,065 F: (ErlParser.java:342) : unknown: other
-19:05:55,065 F: (ErlParser.java:342) : unknown: other
-19:06:01,094 F: (ErlParser.java:342) : unknown: other
-19:06:01,094 F: (ErlParser.java:342) : unknown: other
-19:06:01,210 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:06:07,552 F: (ErlParser.java:342) : unknown: other
-19:06:07,552 F: (ErlParser.java:342) : unknown: other
-19:06:08,415 F: (ErlParser.java:342) : unknown: other
-19:06:08,415 F: (ErlParser.java:342) : unknown: other
-19:06:08,444 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:06:15,680 F: (ErlParser.java:342) : unknown: other
-19:06:15,695 F: (ErlParser.java:342) : unknown: other
-19:06:18,427 F: (ErlParser.java:342) : unknown: other
-19:06:18,427 F: (ErlParser.java:342) : unknown: other
-19:06:19,657 F: (ErlParser.java:342) : unknown: other
-19:06:19,657 F: (ErlParser.java:342) : unknown: other
-19:06:20,035 F: (ErlParser.java:342) : unknown: other
-19:06:20,036 F: (ErlParser.java:342) : unknown: other
-19:06:20,800 F: (ErlParser.java:342) : unknown: other
-19:06:20,800 F: (ErlParser.java:342) : unknown: other
-19:06:20,819 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:07:03,759 F: (ErlParser.java:342) : unknown: other
-19:07:14,620 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:07:28,666 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:07:39,195 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:13:08,509 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:17:53,075 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:18:54,260 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:18:59,600 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:19:44,067 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:19:58,893 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:21:44,287 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:21:53,735 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-19:58:31,551 F: (ErlParser.java:342) : unknown: other
-19:59:47,362 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:06:41,908 F: (ErlParser.java:342) : unknown: other
-20:06:44,892 F: (ErlParser.java:342) : unknown: other
-20:06:57,609 F: (ErlParser.java:342) : unknown: other
-20:06:58,384 F: (ErlParser.java:342) : unknown: other
-20:06:59,947 F: (ErlParser.java:342) : unknown: other
-20:07:00,061 F: (ErlParser.java:342) : unknown: other
-20:07:02,139 F: (ErlParser.java:342) : unknown: other
-20:07:18,608 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:12:59,931 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:13:09,892 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:13:14,121 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:14:40,322 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:15:09,189 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:20:12,368 F: (ErlParser.java:342) : unknown: other
-20:20:14,490 F: (ErlParser.java:342) : unknown: other
-20:20:16,567 F: (ErlParser.java:342) : unknown: other
-20:20:20,048 F: (ErlParser.java:342) : unknown: other
-20:20:25,995 F: (ErlParser.java:342) : unknown: other
-20:20:28,288 F: (ErlParser.java:342) : unknown: other
-20:20:29,514 F: (ErlParser.java:342) : unknown: other
-20:20:29,943 F: (ErlParser.java:342) : unknown: other
-20:20:31,157 F: (ErlParser.java:342) : unknown: other
-20:20:34,468 F: (ErlParser.java:342) : unknown: other
-20:20:36,348 F: (ErlParser.java:342) : unknown: other
-20:20:37,371 F: (ErlParser.java:342) : unknown: other
-20:20:40,284 F: (ErlParser.java:342) : unknown: other
-20:21:50,794 F: (ErlParser.java:342) : unknown: other
-20:21:54,788 F: (ErlParser.java:342) : unknown: other
-20:21:55,146 F: (ErlParser.java:342) : unknown: other
-20:21:56,159 F: (ErlParser.java:342) : unknown: other
-20:21:56,975 F: (ErlParser.java:342) : unknown: other
-20:21:57,799 F: (ErlParser.java:342) : unknown: other
-20:21:58,032 F: (ErlParser.java:342) : unknown: other
-20:21:58,794 F: (ErlParser.java:342) : unknown: other
-20:21:59,932 F: (ErlParser.java:342) : unknown: other
-20:22:01,428 F: (ErlParser.java:342) : unknown: other
-20:22:04,468 F: (ErlParser.java:342) : unknown: other
-20:22:05,871 F: (ErlParser.java:342) : unknown: other
-20:22:26,041 F: (ErlParser.java:342) : unknown: other
-20:22:27,812 F: (ErlParser.java:342) : unknown: other
-20:22:28,204 F: (ErlParser.java:342) : unknown: other
-20:22:29,601 F: (ErlParser.java:342) : unknown: other
-20:22:30,643 F: (ErlParser.java:342) : unknown: other
-20:22:33,763 F: (ErlParser.java:342) : unknown: other
-20:22:35,423 F: (ErlParser.java:342) : unknown: other
-20:22:35,572 F: (ErlParser.java:342) : unknown: other
-20:22:37,208 F: (ErlParser.java:342) : unknown: other
-20:22:38,816 F: (ErlParser.java:342) : unknown: other
-20:22:40,872 F: (ErlParser.java:342) : unknown: other
-20:22:42,403 F: (ErlParser.java:342) : unknown: other
-20:22:45,173 F: (ErlParser.java:342) : unknown: other
-20:22:46,578 F: (ErlParser.java:342) : unknown: other
-20:22:49,890 F: (ErlParser.java:342) : unknown: other
-20:22:51,281 F: (ErlParser.java:342) : unknown: other
-20:22:53,224 F: (ErlParser.java:342) : unknown: other
-20:22:53,734 F: (ErlParser.java:342) : unknown: other
-20:22:55,156 F: (ErlParser.java:342) : unknown: other
-20:22:55,952 F: (ErlParser.java:342) : unknown: other
-20:22:57,535 F: (ErlParser.java:342) : unknown: other
-20:23:00,417 F: (ErlParser.java:342) : unknown: other
-20:23:00,686 F: (ErlParser.java:342) : unknown: other
-20:23:05,661 F: (ErlParser.java:342) : unknown: other
-20:23:09,189 F: (ErlParser.java:342) : unknown: other
-20:23:11,668 F: (ErlParser.java:342) : unknown: other
-20:23:11,918 F: (ErlParser.java:342) : unknown: other
-20:23:12,146 F: (ErlParser.java:342) : unknown: other
-20:23:13,042 F: (ErlParser.java:342) : unknown: other
-20:23:15,838 F: (ErlParser.java:342) : unknown: other
-20:23:16,268 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:23:33,081 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:25:14,672 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:25:50,914 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:26:21,404 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:27:22,379 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:28:54,179 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:29:59,197 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-20:30:35,212 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:01:23,708 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:01:50,032 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:03:11,326 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:06:47,703 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:06:53,255 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:07:08,482 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:12:34,196 F: (ErlParser.java:342) : unknown: other
-21:12:34,238 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:12:35,955 F: (ErlParser.java:342) : unknown: other
-21:12:36,436 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:12:41,739 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:12:57,785 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:13:08,104 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:13:47,183 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:14:04,494 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:14:07,855 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:14:20,301 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:14:58,403 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:15:19,719 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:15:30,951 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:17:23,977 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:19:55,852 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:20:08,232 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:35:23,417 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:36:22,191 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:37:02,726 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:37:37,305 F: (OpenAction.java:134) : open OpenResult {external io:format/2 "/usr/lib/erlang/lib/stdlib-2.8/src/io.erl"}
-21:37:56,370 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:38:11,115 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:38:12,335 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:38:37,529 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:39:14,125 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:40:09,563 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:40:11,891 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:40:57,741 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:41:45,830 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:41:58,593 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:42:14,773 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:42:38,006 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:42:44,593 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:42:52,058 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:43:06,524 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:44:36,669 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:44:56,261 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:45:07,606 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:46:34,752 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:46:41,176 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:47:15,064 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:47:17,195 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-21:47:31,943 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:06:13,469 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:07:46,035 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:08:11,317 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:16:40,874 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:17:42,273 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:19:33,092 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:19:56,688 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:20:14,375 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:20:37,504 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:20:52,587 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:21:00,683 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:21:18,538 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:22:00,415 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:22:57,489 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:25:08,607 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:25:27,683 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:28:22,193 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:32:15,691 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:33:54,422 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:34:16,507 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:34:28,157 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:36:02,523 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-22:36:53,821 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-23:17:20,615 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-23:18:06,195 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-23:33:43,305 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
-23:35:31,823 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:04:24,189 I: (ErlangCore.java:63) : Starting CORE Thread[main,6,main]
+12:04:24,199 I: (ErlangCore.java:78) : *** starting Erlide v0.33.0.201605251547 (core=0.32.2.201605251547) (model api=0.32.1.201605251547) *** (UTF-8) ui
+12:04:24,200 I: (ErlangCore.java:85) : Started CORE
+12:04:24,200 F: (ErlangPlugin.java:89) : Core started
+12:15:14,991 F: (BackendFactory.java:47) : Create build backend 18
+12:15:14,992 F: (BackendFactory.java:54) : Create backend 18_564ea_jessa_12e630
+12:15:14,993 F: (OtpNodeProxy.java:302) : Runtime 18_564ea_jessa_12e630@127.0.0.1 starting
+12:15:14,993 F: (OtpNodeProxy.java:420) : START node :> [/usr/lib/erlang/bin/erl, -name, 18_564ea_jessa_12e630@127.0.0.1, -setcookie, erlide] *** /home/jessa/Desktop/programming-languages
+12:15:14,997 F: (OtpNodeProxy.java:213) : 18_564ea_jessa_12e630@127.0.0.1: waiting connection to peer... 
+12:15:15,402 F: (OtpNodeProxy.java:220) : connected!
+12:15:15,561 F: (OtpNodeProxy.java:307) : Runtime 18_564ea_jessa_12e630@127.0.0.1 running
+12:15:15,563 F: (LogEventHandler.java:27) : info: {"Monitoring java node",'jerlide_c12e634@127.0.0.1'}
+12:15:15,564 F: (LogEventHandler.java:27) : info: {"Start monitor process: ",10000000,50000000}
+12:15:17,010 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:15:35,481 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:17:59,311 F: (ErlParser.java:342) : unknown: other
+12:18:00,195 F: (ErlParser.java:342) : unknown: other
+12:18:00,255 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:18:02,169 F: (ErlParser.java:342) : unknown: other
+12:18:03,206 F: (ErlParser.java:342) : unknown: other
+12:18:04,804 F: (ErlParser.java:342) : unknown: other
+12:18:05,628 F: (ErlParser.java:342) : unknown: other
+12:18:05,697 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:18:07,599 F: (ErlParser.java:342) : unknown: other
+12:18:08,026 F: (ErlParser.java:342) : unknown: other
+12:18:08,092 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:18:10,226 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:19:00,132 F: (ErlParser.java:342) : unknown: other
+12:19:01,562 F: (ErlParser.java:342) : unknown: other
+12:19:10,187 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:19:29,145 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:23:18,145 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+12:37:44,273 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:00:12,900 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:00:19,612 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:00:37,500 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:00:45,209 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:00:49,825 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:01:44,627 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:05:22,363 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:05:43,202 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:05:48,846 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:05:56,958 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:06:05,176 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:06:51,695 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:07:36,373 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:07:38,886 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:07:47,574 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:08:23,393 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:09:20,785 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:09:59,598 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:10:07,341 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:10:18,251 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:11:19,926 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:16:23,441 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:19:04,254 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:19:07,551 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:19:20,590 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:22:03,446 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:40:56,779 F: (AbstractErlContentAssistProcessor.java:158) : no results
+13:40:57,381 F: (AbstractErlContentAssistProcessor.java:158) : no results
+13:40:57,577 F: (AbstractErlContentAssistProcessor.java:158) : no results
+13:41:07,989 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:44:52,025 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:45:32,536 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:45:59,464 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:49:14,818 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:51:48,260 F: (ErlParser.java:342) : unknown: other
+13:52:13,173 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:55:30,795 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:55:35,274 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:55:43,675 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+13:55:57,134 F: (OpenAction.java:134) : open OpenResult {external timer:sleep/1 "/usr/lib/erlang/lib/stdlib-2.8/src/timer.erl"}
+13:55:57,753 F: (OpenAction.java:134) : open OpenResult {local req/2}
+14:02:13,544 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:08:01,132 F: (ErlParser.java:342) : unknown: other
+14:08:07,151 F: (ErlParser.java:342) : unknown: other
+14:08:34,116 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:08:48,559 F: (ErlParser.java:342) : unknown: other
+14:08:51,567 F: (ErlParser.java:342) : unknown: other
+14:08:53,620 F: (ErlParser.java:342) : unknown: other
+14:08:55,246 F: (ErlParser.java:342) : unknown: other
+14:08:56,421 F: (ErlParser.java:342) : unknown: other
+14:08:58,303 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:09:16,610 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:09:21,842 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:09:45,429 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:09:57,800 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:10:48,647 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:12:01,562 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:12:12,228 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:13:40,329 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:14:02,560 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:14:40,732 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:15:37,572 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:15:57,243 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:18:17,942 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:20:32,483 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:20:54,717 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:22:49,496 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:22:56,435 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:27:07,061 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:34:33,418 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:42:12,897 F: (InternalBuilder.java:203) : Will compile 1 resource(s)
+14:42:18,563 F: (InternalBuilder.java:203) : Will compile 1 resource(s)

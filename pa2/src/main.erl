@@ -2,7 +2,13 @@
 -compile(export_all).
 
 do_work(StartSeq, TargetSeq, PID) ->
-  run(StartSeq, TargetSeq),
+  Node = get_random_node(),
+  
+  spawn(Node, main, run, [StartSeq, TargetSeq, self()]),
+  timer:sleep(10000),
+  receive Inversions ->
+	io:format("Inversion Count: ~w ~n",[Inversions])
+  end,
   PID ! {ok, 4}.
   
 wait_for_done() ->
@@ -14,22 +20,21 @@ start() ->
   {ok, [StartSequence]} = io:fread("", "~s"),
   {ok, [TargetSequence]} = io:fread("", "~s"),
   spawn(main, do_work, [StartSequence, TargetSequence, self()]),
-wait_for_done().
+  wait_for_done().
 
-%%% Start Homework %
+%%% Start Homework %%%%%
+
 %%----------------------------------------------------------------------
 %% Function: run/2
 %% Purpose: runs the program
 %% Args:   InputSequence  : A list of DNA chemical bases that are out of order
 %%         TargetSequence : A list of DNA chemicals bases in the proper order
 %%----------------------------------------------------------------------
-run(InputSequence, TargetSequence) ->
-  Seq = map_get_sequence(fun get_index/2, TargetSequence, InputSequence, 1),
-  Node = get_random_node(),
-  spawn(Node, main, mergesort, [Seq, 0, self(), one]),
-  
+run(InputSequence, TargetSequence, PID) ->
+  Seq = map_get_sequence(fun get_index/2, TargetSequence, InputSequence, 1), 
+  spawn(main, mergesort, [Seq, 0, self(), parent]),
   receive {_, Inversions, _, _} -> 
-     io:format("Inversion Count: ~w ~n",[Inversions])
+     PID ! Inversions
   end.
 
 
@@ -43,7 +48,7 @@ run(InputSequence, TargetSequence) ->
 %% Returns: A list which replaces elements in the InputSequence with 
 %%          an index of the correct location
 %% Example: Input = agga, Node = g, N=1
-%%  Effect: I = 2, Input = a1ga
+%% Effect: I = 2, Input = a1ga
 %%----------------------------------------------------------------------
 map_get_sequence(_, [], List, _)    -> List;
 map_get_sequence(F, [H|T], List, N) -> 
@@ -65,14 +70,14 @@ get_index(Node, InputSeq) ->
 
 
 %%----------------------------------------------------------------------
-%% Function: get_inversion_Inversions/2
-%% Purpose:  Inversionss the number of inversions in a sequence
-%% Args:  [H|T] : The sequence to compare
-%%        Inversions : Holds the current number of inversions
-%% Returns: The total inversion Inversions
+%% Function: mergesort/4
+%% Purpose : Sorts a list recursively
+%% Args:  [List] : The List
+%%        Inversions  : The number of inversions
+%%        Parent      : The Parent PID 
+%%        Position    : A marker to keep track of the recursive tree (left, or right) 
+%% Returns: The sorted list, total number of inversions, pid, and position
 %%----------------------------------------------------------------------
-
-
 mergesort([], Count, Parent, Position) -> Parent ! {[], Count, self(), Position};
 mergesort([E], Count, Parent, Position) -> Parent ! {[E], Count, self(), Position};
 mergesort(List, Inversions, Parent, Position) ->
@@ -81,7 +86,15 @@ mergesort(List, Inversions, Parent, Position) ->
 	spawn(main, mergesort, [Right, Inversions, self(), right]),
 	
 	receiveInfo(Parent, Position).
-	
+
+
+%%----------------------------------------------------------------------
+%% Function: receiveInfo/2
+%% Purpose : recieves sorted data of the left and right subtrees
+%% Args:  Parent : The parent pid
+%%        Pos : The position of the list (left/right)
+%% Returns: The sorted list, total number of inversions, pid, and position
+%%----------------------------------------------------------------------
 receiveInfo(Parent, Pos) ->
 	receive {L1, Inv1, _, Pos1} ->
 				receive {L2, Inv2, _, _} ->
@@ -95,10 +108,16 @@ receiveInfo(Parent, Pos) ->
 				end 
 	end.
 
-% Merges
-%
-% [List1] : The first half of the unordered sequence
-% [List2] : The second half of the unordered sequence
+
+%%----------------------------------------------------------------------
+%% Function: merge/3
+%% Purpose : sorts lists by comparing the first element in two arrays and combining
+%%           them in the correct order
+%% Args:  [A] : The left half of the unordered list
+%%        [B] : The right half of the unordered list
+%%        Inversions : the  current number of inversions
+%% Returns: The total number of inversions and the new ordered list
+%%----------------------------------------------------------------------
 merge(A, [], Inversions) -> {A, Inversions};
 merge([], B, Inversions) -> {B, Inversions};
 merge([Ha|Ta], [Hb|Tb], Inversions) when Ha < Hb ->
@@ -107,19 +126,6 @@ merge([Ha|Ta], [Hb|Tb], Inversions) when Ha < Hb ->
 merge([Ha|Ta], [Hb|Tb], Inversions) ->
 	{List, NewInversions} = merge([Ha|Ta], Tb, Inversions+1),
 	{[Hb|List], NewInversions}.
-
-
-
-
-%%----------------------------------------------------------------------
-%% Function: compare/3
-%% Purpose:  Inversionss pairwise inversions
-%% Args:  H1     : The Node to compare 
-%%        [H2|T] : The sequence to compare
-%%        Inversions  : Holds the number of inversions
-%% Returns: Inversions
-%%----------------------------------------------------------------------
-
 
 %%----------------------------------------------------------------------
 %% Function: replace_nth_node/3
