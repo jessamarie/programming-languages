@@ -1,1 +1,4 @@
 .metadata/
+erlide.log
+erl_crash.dump
+erlide.log.lck

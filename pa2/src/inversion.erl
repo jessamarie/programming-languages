@@ -1,36 +1,24 @@
--module(main).
--compile(export_all).
+%% @author Jessica Marie Barre
+%% @doc @todo description
 
-do_work(StartSeq, TargetSeq, PID) ->
-  run(StartSeq, TargetSeq),
-  PID ! {ok, 4}.
-  
-wait_for_done() ->
-  receive
-    {ok, Result} -> io:fwrite("~B~n", [Result])
-  end.
+-module(inversion).
+-export([run/0]).
 
-start() ->
-  {ok, [StartSequence]} = io:fread("", "~s"),
-  {ok, [TargetSequence]} = io:fread("", "~s"),
-  spawn(main, do_work, [StartSequence, TargetSequence, self()]),
-wait_for_done().
 
-%%% Start Homework %
 %%----------------------------------------------------------------------
 %% Function: run/2
 %% Purpose: runs the program
 %% Args:   InputSequence  : A list of DNA chemical bases that are out of order
 %%         TargetSequence : A list of DNA chemicals bases in the proper order
 %%----------------------------------------------------------------------
-run(InputSequence, TargetSequence) ->
+run() ->
+  InputSequence = "agga",
+  TargetSequence = "gaag",
+  %io:format("list starts as ~w ~n",[InputSequence]),
   Seq = map_get_sequence(fun get_index/2, TargetSequence, InputSequence, 1),
-  Node = get_random_node(),
-  spawn(Node, main, mergesort, [Seq, 0, self(), one]),
-  
-  receive {_, Inversions, _, _} -> 
-     io:format("Inversion Count: ~w ~n",[Inversions])
-  end.
+  %io:format("Final sequence: ~w ~n",[Seq]),
+  {Merged, Count} = mergesort(Seq, 0),
+  io:format("Inversion Count : ~w ~n",[Count]).
 
 
 %%----------------------------------------------------------------------
@@ -48,7 +36,9 @@ run(InputSequence, TargetSequence) ->
 map_get_sequence(_, [], List, _)    -> List;
 map_get_sequence(F, [H|T], List, N) -> 
   I = F(H, List),
+  %io:format("Target: ~c = ~w index: ~w ~n",[H, N, I]), 
   NewList = replace_nth_node(I, N, List),
+  %io:format("Our list is now ~w ~n",[NewList]),
   map_get_sequence(F, T, NewList, N+1).
 
 
@@ -65,60 +55,32 @@ get_index(Node, InputSeq) ->
 
 
 %%----------------------------------------------------------------------
-%% Function: get_inversion_Inversions/2
-%% Purpose:  Inversionss the number of inversions in a sequence
+%% Function: get_inversion_count/2
+%% Purpose:  counts the number of inversions in a sequence
 %% Args:  [H|T] : The sequence to compare
-%%        Inversions : Holds the current number of inversions
-%% Returns: The total inversion Inversions
+%%        Count : Holds the current number of inversions
+%% Returns: The total inversion count
 %%----------------------------------------------------------------------
-
-
-mergesort([], Count, Parent, Position) -> Parent ! {[], Count, self(), Position};
-mergesort([E], Count, Parent, Position) -> Parent ! {[E], Count, self(), Position};
-mergesort(List, Inversions, Parent, Position) ->
-	{Left, Right} = lists:split(trunc(length(List)/2), List),
-	spawn(main, mergesort, [Left, Inversions, self(), left]),
-	spawn(main, mergesort, [Right, Inversions, self(), right]),
-	
-	receiveInfo(Parent, Position).
-	
-receiveInfo(Parent, Pos) ->
-	receive {L1, Inv1, _, Pos1} ->
-				receive {L2, Inv2, _, _} ->
-							if Pos1 == left ->
-								   {MList, TotalInv} = merge(L1, L2, Inv1 + Inv2),
-								   Parent ! {MList, TotalInv, self(), Pos};
-							   true -> 
-								   {MList, TotalInv} = merge(L2,L1, Inv1 + Inv2),
-								   Parent ! {MList, TotalInv, self(), Pos}
-							end
-				end 
-	end.
-
-% Merges
-%
-% [List1] : The first half of the unordered sequence
-% [List2] : The second half of the unordered sequence
-merge(A, [], Inversions) -> {A, Inversions};
-merge([], B, Inversions) -> {B, Inversions};
-merge([Ha|Ta], [Hb|Tb], Inversions) when Ha < Hb ->
-	{List, NewInversions} = merge(Ta, [Hb|Tb], Inversions),
-	{[Ha|List], NewInversions};
-merge([Ha|Ta], [Hb|Tb], Inversions) ->
-	{List, NewInversions} = merge([Ha|Ta], Tb, Inversions+1),
-	{[Hb|List], NewInversions}.
-
-
-
+get_inversion_count([H|T], Count) -> 
+  Count2 = compare(H,T,Count),
+  get_inversion_count(T,Count2);
+get_inversion_count([], Count) -> Count.
+  
 
 %%----------------------------------------------------------------------
 %% Function: compare/3
-%% Purpose:  Inversionss pairwise inversions
+%% Purpose:  counts pairwise inversions
 %% Args:  H1     : The Node to compare 
 %%        [H2|T] : The sequence to compare
-%%        Inversions  : Holds the number of inversions
-%% Returns: Inversions
+%%        Count  : Holds the number of inversions
+%% Returns: Count
 %%----------------------------------------------------------------------
+compare(_,  [], Count) -> Count;
+compare(H1, [H2|T], Count) -> 
+  if
+    H1 > H2  ->  compare(H1, T, Count+1);
+	true -> compare(H1, T, Count)
+  end.
 
 
 %%----------------------------------------------------------------------
@@ -135,14 +97,48 @@ replace_nth_node(1, I, [_|T]) -> [I|T];
 replace_nth_node(N, I, [H|T]) -> [H | replace_nth_node(N-1,I, T)].
 
 
-%%--------------------------------------
-%% Code provided in homework description
-%%--------------------------------------
-get_random_node() ->
-  Length = length(net_adm:world()),
-  World = net_adm:world(),
-  rget_random_node(Length, World).
 
-rget_random_node(1, [H|_]) -> H;
-rget_random_node(_, [H|[]]) -> H;
-rget_random_node(N, [_|T]) -> rget_random_node(N-1, T).
+
+%%%%% Unused functions %%%%%%%%
+
+%%% This mergesort and merge code is modeled after:
+% https://github.com/hugopeixoto/mergesort/blob/master/erlang/mergesort.erl
+mergesort([], Count) -> {[], Count};
+mergesort([E], Count) -> {[E], Count};
+mergesort(List, Count) ->
+  {A, B} = lists:split(trunc(length(List)/2), List),
+   io:format("Split ~w ~w ~w ~n",[A, B, Count]),
+
+  {Left, CountA} = mergesort(A,Count),
+  {Right, CountB} = mergesort(B,Count),
+  
+  CountC = CountA + CountB,
+  {Merged, TotalCount} = merge(Left, Right, CountC).
+
+%io:format("Merged ~w ~w ~n",[Merged, TotalCount]).
+
+% Merges
+%
+% [List1] : The first half of the unordered sequence
+% [List2] : The second half of the unordered sequence
+merge(A, [], Count) -> {A, Count};
+merge([], B, Count) -> {B, Count};
+merge([Ha|Ta], [Hb|Tb], Count) when Ha < Hb ->
+	{List, CountTwo} = merge(Ta, [Hb|Tb], Count),
+	{[Ha|List], CountTwo};
+merge([Ha|Ta], [Hb|Tb], Count) ->
+	{List, CountTwo} = merge([Ha|Ta], Tb, Count+1),
+	{[Hb|List], CountTwo}.
+
+%% Provided in homework details
+get_random_node() ->
+  get_nth_node(rand:uniform(length(net_adm:world())), net_adm:world()).
+
+get_nth_node(1, [H|_]) -> H;
+get_nth_node(_, [H|[]]) -> H;
+get_nth_node(N, [_|T]) -> get_nth_node(N-1, T).
+
+remove_nth_node(_, []) -> [];
+remove_nth_node(1, [_|T]) -> T;
+remove_nth_node(N, [H|T]) -> [H | remove_nth_node(N-1, T)].
+
