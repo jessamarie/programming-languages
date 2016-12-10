@@ -1,0 +1,88 @@
+% Note that if you raise the query “student(Major)” before reading/parsing/
+%  asserting the hints, it should return multiple student majors.
+
+% Also, keep in mind that there is more than one way to word the same hint. For    
+% example, these two hints mean the same thing:
+
+
+% The occupant of the office with the Dilbert comic poster reads Fantasy.
+% The student who reads Fantasy occupies the office with the Dilbert comic poster.
+[the,occupant,of,the,office,with,the,dilbert,comic,poster,reads,fantasy,'.']
+[the,student,who,reads,fantasy,occupies,the,office,with,the,dilbert,comic,poster,'.']
+
+%
+% Determiners: a, an, the
+% Verbs: occupies, belongs, reads, is, eats, occupying, has
+% Nouns: major, office, comic, poster, club, left, occupant, student,        
+%        who (pro), pizza, middle, first, one (pro), neighbor, posters
+% var-nouns: architecture, ctrl+alt+del, r gaming alliance, rpi flying club
+%             cse, gs, scifi, dilbert, calvin and hobbes, fantasy, pepperoni,
+%             rcos, xkcd, cheese, fiction, cs, buffalo chicken, hawaiian,
+%             poetry, itws, broccoli, phd comics, history
+% Prepositions: with, to, on, of, next to, in
+% Punctuation: .,?
+% 
+%
+% noun phrase: the _ major, the _ club, the _ poster, the student, the _ who, the office,  
+%              the _ office, an office neighbor who, the _ occupant, the occupant,
+%              the left/right, the one, the _s _, the middle
+%               
+%               
+% preposition: with, next to, of, on,
+% 
+% relative clause: who + verb phrase
+%
+% verb phrase:  occupies, belongs to, reads _, occupying, eats _ pizza, has, is
+% 
+%
+% Subject + Verb + Subject + Prep + Object
+%    The _ major occupies the office with the _ comic poster.
+%
+% Subject + Verb + Object
+%    The _ major belongs to the _ Club.
+%
+% Subject + Verb + Object
+%    The _ major reads _.
+% 
+% Sub + Prep + Ob + Verb + Prep + Sub + Sub + Prep + ob
+%    The office with the _ comic poster is on the left of the office with the _ comic poster.
+%
+% np + prep + np + vp
+%    The office with the _ comic poster's occupant reads _.
+%
+% np + vp + vp + np
+%    The student who eats _ pizza belongs to the _ club.
+%
+% np + prep + np + prep + np + vp
+%    The occupant of the office with the _ comic poster eats _ pizza.
+%
+% np + vp + np + prep + np + vp
+%    The student occupying the office in the middle reads _.
+%
+% np + vp + np
+%    The _ major occupies the first office.
+% 
+% np + vp + vp + np + prep + np + vp + np
+%    The student who eats _ pizza occupies the office next to the one who belongs to the _ club.
+%
+% np + vp + np + vp + np + prep + np + vp
+%    The student who belongs to the _ club occupies the office next to the student who eats _ pizza.
+%
+% np + rp + vp + vp
+%    The student who eats _ pizza reads _.
+%
+% np + vp
+%    The _ major eats _ pizza.
+%
+% np + vp + np + prep + np + prep + np
+%    The _ major occupies the office next to the one with the _ comic poster.
+%
+% np + rp + vp + vp + np + vp
+%    The student who eats _ pizza has an office neighbor who reads _.
+
+%
+%   The occupant of the office with the _ comic poster reads _.
+%
+%   The student who reads _ occupies the office with the _ comic poster.
+
+

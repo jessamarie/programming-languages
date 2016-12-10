@@ -1,0 +1,43 @@
+nationality(dane).
+nationality(englishman).
+nationality(german).
+nationality(swede).
+nationality(notwegian).
+
+color(blue).
+color(red).
+color(green).
+color(white).
+color(yellow).
+
+drink(beer).
+drink(coffee).
+drink(milk).
+drink(tea).
+drink(water).
+
+cigarette(blend).
+cigarette(bluemaster).
+cigarette(dunhill).
+cigarette(pallmall).
+cigarette(prince).
+
+pet(birds).
+pet(cats).
+pet(dogs).
+pet(fish).
+pet(horses).
+
+/* Additional facts */
+house(englishman,red,_,_,_).
+house(swede,_,_,_,dogs).
+house(dane,_,tea,_,_).
+house(_,geen,coffee,_,_).
+house(_,_,_,pallmall,birds).
+house(_,yellow,_,dunhill,_).
+house(_,_,milk,_,_).
+house(norwegian,...)
+
+/* Rules */
+% house(nationality,color,drink,cigarette,pet)
+house(A,B,C,D,E):-nationality(A),color(B),drink(C),cigarette(D),pet(E).
